@@ -16,7 +16,7 @@ class D1Pdo extends PDO
         protected string $dsn,
         protected CloudflareD1Connector $connector,
     ) {
-        parent::__construct('sqlite::memory:');
+        // parent::__construct('sqlite::memory:');
     }
 
     public function prepare($query, $options = []): PDOStatement|bool
