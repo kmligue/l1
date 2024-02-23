@@ -24,6 +24,36 @@ You can install the package via Composer:
 composer require renoki-co/l1
 ```
 
+## 🚀 Installation - Fork
+To ensure that the modified version of the package is installed in the Laravel application, you can follow these steps:
+
+Remove the original package from your Laravel application's composer.json file and run composer update to remove any traces of the original package.
+
+Add a custom repository to your composer.json file that points to your forked package. This will tell Composer to use your modified version instead of the original one. Here's an example of how to add the repository:
+
+Copy
+```
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com/your-username/your-forked-package"
+    }
+]
+```
+Replace `"https://github.com/your-username/your-forked-package"` with the URL of your forked package's repository.
+
+Require your package in your Laravel application's composer.json file. Make sure to specify the version constraint to use your forked package. For example:
+Copy
+```
+"require": {
+    "your-username/your-package": "dev-master"
+}
+```
+Replace `"your-username/your-package"` with the name of your package.
+
+Run `composer update` to install your package and its dependencies. Composer will now fetch your forked package from the custom repository you added.
+By following these steps, your Laravel application should now use the modified version of the package instead of the original one.
+
 ## 🙌 Usage
 
 ### D1 with raw PDO
